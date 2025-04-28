@@ -1,0 +1,36 @@
+Cara Kerja Sistem Pakar Hama Tanaman
+
+1. Tahap Input Data
+Pada tahap awal, sistem akan mengajukan empat pertanyaan sederhana mengenai gejala yang dialami tanaman. Pengguna hanya perlu menjawab setiap pertanyaan dengan "ya" atau "tidak".
+
+2. Proses Konversi Jawaban menjadi Fakta
+Jawaban yang diberikan akan dikonversi menjadi fakta dalam sistem dengan format True atau False. Sebagai contoh, apabila pengguna menjawab "ya" untuk gejala daun menguning, sistem akan menyimpan data tersebut sebagai Fact(daun_menguning=True).
+
+3. Pencocokan Gejala dengan Aturan
+Sistem memiliki empat aturan utama untuk mengidentifikasi jenis hama, ditambah satu aturan tambahan untuk menangani kasus yang tidak sesuai dengan aturan yang ada. Sistem akan memeriksa setiap aturan menggunakan logika AND, di mana semua kondisi dalam satu aturan harus terpenuhi agar dapat diproses.
+
+4. Penentuan Hama yang Sesuai
+Jika terdapat aturan di mana seluruh syaratnya terpenuhi, maka sistem akan menjalankan fungsi yang sesuai untuk mengidentifikasi hama tersebut. Sebagai contoh, apabila ditemukan gejala daun menguning dan bercak hitam, sistem akan langsung memanggil fungsi untuk mengidentifikasi kutu daun.
+
+5. Penanganan Kasus Khusus
+Jika gejala yang dimasukkan tidak cocok dengan aturan manapun, sistem akan memberikan informasi bahwa hama tidak dapat diidentifikasi, serta menyarankan pengguna untuk berkonsultasi lebih lanjut dengan ahli pertanian.
+
+Contoh Kasus Nyata:
+
+Kasus Tanaman Terinfeksi Ulat Grayak
+Input gejala: daun berlubang (ya) dan tanaman layu (ya).
+Sistem mencocokkan data dengan aturan nomor 2.
+Setelah cocok, sistem menjalankan fungsi ulat_grayak(), dan menampilkan hasil:
+"Hama: Ulat Grayak. Solusi: Gunakan pestisida biologis untuk penanganan."
+
+Kasus Gejala Tidak Jelas
+Input gejala: hanya daun menguning (ya).
+Sistem memeriksa seluruh aturan, namun tidak ada yang cocok.
+Sistem kemudian menjalankan fungsi hama_tidak_dikenali(), dan menampilkan pesan:
+"Hama tidak terdeteksi, disarankan untuk berkonsultasi dengan ahli pertanian."
+
+Proses Kerja Sistem:
+
+Sistem pakar ini menggunakan metode forward chaining, yaitu bekerja dari fakta (gejala) untuk menarik sebuah kesimpulan (jenis hama).
+Sistem ini bersifat deterministik, sehingga input yang sama akan selalu menghasilkan output yang sama.
+Selain itu, sistem juga mampu menangani beberapa kemungkinan sekaligus apabila terjadi ketidakjelasan pada gejala yang diinputkan.

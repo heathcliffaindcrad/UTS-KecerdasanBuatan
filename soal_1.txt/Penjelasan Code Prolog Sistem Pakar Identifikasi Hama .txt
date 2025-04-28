@@ -1,0 +1,50 @@
+Alur Kerja Sistem:
+
+Tahap Input Data:
+Sistem akan memulai dengan menanyakan empat gejala utama pada tanaman melalui pertanyaan sederhana. Pengguna hanya perlu menjawab "ya" atau "tidak" untuk setiap gejala yang ditampilkan.
+
+Konversi Jawaban:
+Setiap respons pengguna akan dikonversi menjadi fakta dalam basis pengetahuan sistem. Contohnya, jika pengguna menjawab "ya" untuk gejala daun menguning, sistem akan menyimpan fakta gejala(daun_menguning).
+
+Proses Pencocokan Aturan:
+Sistem memiliki empat aturan utama untuk mengidentifikasi hama:
+
+Aturan 1: Mengidentifikasi kutu daun jika ditemukan gejala daun menguning dan bercak hitam
+
+Aturan 2: Mengenali ulat grayak ketika terdapat gejala daun berlubang dan tanaman layu
+
+Aturan 3: Mendeteksi tungau bila ada gejala daun menguning dan tanaman layu
+
+Aturan 4: Mengidentifikasi kumbang jika ditemukan bercak hitam dan daun berlubang
+
+Proses Inferensi:
+Sistem akan melakukan pengecekan berurutan terhadap semua aturan yang ada. Proses ini menggunakan teknik forward chaining dimana sistem berjalan dari fakta menuju kesimpulan.
+
+Penentuan Hasil:
+Jika ditemukan kecocokan dengan salah satu aturan, sistem akan menampilkan:
+
+Jenis hama yang teridentifikasi
+
+Solusi penanganan yang direkomendasikan
+Jika tidak ditemukan kecocokan, sistem akan memberikan pesan bahwa hama tidak dapat diidentifikasi.
+
+Contoh Implementasi:
+
+?- mulai.
+Apakah tanaman menunjukkan gejala daun_menguning? (ya/tidak): ya.
+Apakah tanaman menunjukkan gejala bercak_hitam? (ya/tidak): ya.
+Apakah tanaman menunjukkan gejala daun_berlubang? (ya/tidak): tidak.
+Apakah tanaman menunjukkan gejala tanaman_layu? (ya/tidak): tidak.
+
+Hama yang teridentifikasi: kutu_daun
+Solusi: Gunakan insektisida sistemik atau semprot dengan air sabun
+
+Karakteristik Sistem:
+
+Sifat Deterministik: Input yang sama akan selalu menghasilkan output yang sama
+
+Bersifat Terbatas: Hanya dapat mengidentifikasi empat jenis hama tertentu
+
+Efisiensi: Proses identifikasi berlangsung cepat dan langsung
+
+Interaktif: Memungkinkan dialog sederhana dengan pengguna
